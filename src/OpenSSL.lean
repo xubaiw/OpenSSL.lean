@@ -1,11 +1,11 @@
 
 namespace OpenSSL
 
-constant SslClientPointed : PointedType
+constant SslClientPointed : NonemptyType
 
 def SslClient : Type := SslClientPointed.type
 
-instance : Inhabited SslClient := ⟨SslClientPointed.val⟩
+instance : Nonempty SslClient := SslClientPointed.property
 
 @[extern "ssl_init"]
 constant sslInit : (certfile : @& String) → (keyfile : @& String) → IO Unit
