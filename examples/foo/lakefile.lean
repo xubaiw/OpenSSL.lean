@@ -6,6 +6,6 @@ package foo {
   dependencies := #[{
     name := `OpenSSL
     src := Source.path "../.."
-    args := ["static"]
+    -- args := ["static"]
   }]
 }
